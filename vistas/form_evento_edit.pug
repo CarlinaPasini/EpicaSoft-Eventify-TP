@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  h2= titulo
+  form(action=`/eventos/${evento.id}/editar` method='post')
+    div
+      label Nombre:
+      input(type='text' name='nombre' required value=evento.nombre)
+    div
+      label Fecha:
+      input(type='date' name='fecha' required value=evento.fecha)
+    div
+      label Cliente:
+      input(type='text' name='cliente' required value=evento.cliente)
+    div
+      label Presupuesto:
+      input(type='number' name='presupuesto' value=evento.presupuesto)
+    div
+      label Proveedores (Ctrl+clic para múltiples):
+      select(name='proveedores' multiple)
+        each p in proveedores
+          option(value=p.id selected=(evento.proveedores.indexOf(String(p.id)) !== -1)) #{p.id} - #{p.nombre}
+    div
+      label Invitados (Ctrl+clic para múltiples):
+      select(name='invitados' multiple)
+        each g in invitados
+          option(value=g.id selected=(evento.invitados.indexOf(String(g.id)) !== -1)) #{g.id} - #{g.nombre}
+    div
+      label Notas:
+      textarea(name='notas')= evento.notas
+    div
+      button(type='submit') Guardar cambios

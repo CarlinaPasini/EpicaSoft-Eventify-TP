@@ -1,0 +1,41 @@
+extends layout
+
+block content
+  h2= titulo
+  a(href='/') Volver al menú
+  if proveedores.length
+    table
+      thead
+        tr
+          th ID
+          th Nombre
+          th Categoria
+          th Contacto
+          th Precio
+      tbody
+        each p in proveedores
+          tr
+            td= p.id
+            td= p.nombre
+            td= p.categoria
+            td= p.contacto
+            td $#{p.precio}
+  else
+    p No hay proveedores cargados.
+  hr
+  h3 Agregar proveedor
+  form(action='/proveedores' method='post')
+    div
+      label Nombre:
+      input(type='text' name='nombre' required)
+    div
+      label Categoria:
+      input(type='text' name='categoria')
+    div
+      label Contacto:
+      input(type='email' name='contacto')
+    div
+      label Precio:
+      input(type='number' name='precio' value='0')
+    div
+      button(type='submit') Agregar proveedor

@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  h2= titulo
+  a(href='/') Volver al menú
+  if invitados.length
+    table
+      thead
+        tr
+          th ID
+          th Nombre
+          th Email
+          th RSVP
+      tbody
+        each g in invitados
+          tr
+            td= g.id
+            td= g.nombre
+            td= g.email
+            td= g.rsvp ? 'Confirmado' : 'Pendiente'
+  else
+    p No hay invitados cargados.
+  hr
+  h3 Agregar invitado
+  form(action='/invitados' method='post')
+    div
+      label Nombre:
+      input(type='text' name='nombre' required)
+    div
+      label Email:
+      input(type='email' name='email' required)
+    div
+      label RSVP:
+      select(name='rsvp')
+        option(value='false') Pendiente
+        option(value='true') Confirmado
+    div
+      button(type='submit') Agregar invitado

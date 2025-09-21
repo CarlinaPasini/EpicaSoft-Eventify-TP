@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  h2= titulo
+  form(action='/eventos' method='post')
+    div
+      label Nombre:
+      input(type='text' name='nombre' required)
+    div
+      label Fecha:
+      input(type='date' name='fecha' required)
+    div
+      label Cliente:
+      input(type='text' name='cliente' required)
+    div
+      label Presupuesto:
+      input(type='number' name='presupuesto' value='0')
+    div
+      label Proveedores (Ctrl+clic para múltiples):
+      select(name='proveedores' multiple)
+        each p in proveedores
+          option(value=p.id)= `${p.id} - ${p.nombre}`
+    div
+      label Invitados (Ctrl+clic para múltiples):
+      select(name='invitados' multiple)
+        each g in invitados
+          option(value=g.id)= `${g.id} - ${g.nombre}`
+    div
+      label Notas:
+      textarea(name='notas')
+    div
+      button(type='submit') Crear

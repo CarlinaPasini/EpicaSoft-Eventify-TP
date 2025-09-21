@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  h2= titulo
+  a(href='/') Volver al menú
+  if eventos.length
+    table
+      thead
+        tr
+          th Nombre
+          th Fecha
+          th Cliente
+          th Presupuesto
+          th Estado
+          th Acciones
+      tbody
+        each ev in eventos
+          tr
+            td: a(href=`/eventos/${ev.id}`)= ev.nombre
+            td= ev.fecha
+            td= ev.cliente
+            td $#{ev.presupuesto}
+            td= ev.estado
+            td
+              a(href=`/eventos/${ev.id}/editar`) Editar
+              form(action=`/eventos/${ev.id}/eliminar` method='post' style='display:inline; margin-left:8px;')
+                button(type='submit') Eliminar
+  else
+    p No hay eventos cargados.
+  a(href='/eventos/nuevo') Crear nuevo evento

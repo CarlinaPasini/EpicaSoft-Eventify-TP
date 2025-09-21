@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  h2= titulo
+  p Nombre: #{evento.nombre}
+  p Fecha: #{evento.fecha}
+  p Cliente: #{evento.cliente}
+  p Presupuesto: $#{evento.presupuesto}
+  p Estado: #{evento.estado}
+  p Notas: #{evento.notas}
+
+  h3 Proveedores asignados
+  if proveedores.length
+    ul
+      each p in proveedores
+        li #{p.nombre} - #{p.categoria} ($#{p.precio})
+  else
+    p No hay proveedores asignados.
+
+  h3 Invitados asignados
+  if invitados.length
+    ul
+      each g in invitados
+        li #{g.nombre} (#{g.email})
+  else
+    p No hay invitados asignados.
+
+  form(action=`/eventos/${evento.id}/eliminar` method='post')
+    button(type='submit') Eliminar evento
+  a(href='/eventos') Volver a Eventos

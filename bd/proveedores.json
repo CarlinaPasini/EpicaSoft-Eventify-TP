@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1",
+    "nombre": "Catering Mendoza",
+    "categoria": "Catering",
+    "contacto": "contacto@cateringmza.com",
+    "precio": 20000
+  },
+  {
+    "id": "2",
+    "nombre": "Sonido Pro",
+    "categoria": "Sonido",
+    "contacto": "ventas@sonidopro.com",
+    "precio": 8000
+  },
+  {
+    "id": "3",
+    "nombre": "LUZ",
+    "categoria": "iluminacion ",
+    "contacto": "luz@iluminacion.com",
+    "precio": 25000
+  },
+  {
+    "id": 4,
+    "nombre": "prueba",
+    "categoria": "iluminacion ",
+    "contacto": "luz@iluminacion.com",
+    "precio": 700
+  }
+]

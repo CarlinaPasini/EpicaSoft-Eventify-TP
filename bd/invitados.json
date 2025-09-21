@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "nombre": "Juan Pérez",
+    "email": "juan@example.com",
+    "rsvp": true
+  },
+  {
+    "id": "2",
+    "nombre": "Ana Gómez",
+    "email": "ana@example.com",
+    "rsvp": false
+  },
+  {
+    "id": "3",
+    "nombre": "maui ",
+    "email": "maiu@soyyo.com",
+    "rsvp": true
+  },
+  {
+    "id": 4,
+    "nombre": "prueba",
+    "email": "carlina.pasini@hotmail.com",
+    "rsvp": true
+  }
+]

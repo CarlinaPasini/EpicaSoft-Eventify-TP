@@ -1,0 +1,39 @@
+[
+  {
+    "id": "1",
+    "nombre": "Lanzamiento Producto X",
+    "fecha": "2025-10-15",
+    "cliente": "Empresa ACME",
+    "presupuesto": 50000,
+    "proveedores": [
+      "1",
+      "2"
+    ],
+    "invitados": [
+      "1",
+      "2"
+    ],
+    "estado": "planificación",
+    "notas": "Evento corporativo con 200 invitados."
+  },
+  {
+    "id": "1758470771588",
+    "nombre": "prueba",
+    "fecha": "2025-09-27",
+    "cliente": "grupo 1",
+    "presupuesto": 850000,
+    "proveedores": [
+      "1",
+      "2",
+      "3",
+      "1758470615533"
+    ],
+    "invitados": [
+      "1",
+      "2",
+      "3"
+    ],
+    "estado": "planificación",
+    "notas": ""
+  }
+]
